@@ -2,7 +2,7 @@ package uz.uzfundit.sherzod.chapter1;
 
 import java.util.Scanner;
 
-public class game {
+public class Game {
 
     public static void main(String[] args) {
         winner();
@@ -13,12 +13,12 @@ public class game {
         Scanner keyboard=new Scanner(System.in);
 
         System.out.println("This program is a computer game. Please,\n" + "type in an integer in the range 1 ... 2147483646 :");
-        int scanNumber=keyboard.nextInt();
+        long scanNumber=keyboard.nextInt();
         System.out.println("You typed in "+scanNumber);
 
-        int twice=scanNumber*2;
-        int myNumb1 = twice + 1;
-        int myNumb2 = myNumb1 + 1;
+        long twice = scanNumber * 2;
+        long myNumb1 = twice + 1;
+        long myNumb2 = myNumb1 + 1;
 
         System.out.println("My numbers are "+twice+", "+myNumb1+", and "+myNumb2+".");
         System.out.println("Sorry, you lost the game.");
@@ -29,12 +29,12 @@ public class game {
         Scanner scanner=new Scanner(System.in);
 
         System.out.println("This program is a computer game. Please,\n" + "type in an integer in the range 1 ... 2147483646 :");
-        int scanNumb=scanner.nextInt();
+        float scanNumb=scanner.nextInt();
         System.out.println("You typed in "+scanNumb);
 
-        int half = scanNumb/2;
-        int number1 = half/2;
-        int number2 = number1/2;
+        float half = scanNumb / 2;
+        float number1 = half / 2;
+        float number2 = number1 / 2;
 
         System.out.println("My numbers are "+half+", "+number1+", and "+number2+".");
         System.out.println("You won the game!");
