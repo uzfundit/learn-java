@@ -2,7 +2,7 @@ package uz.uzfundit.sherzod.chapter1;
 
 import java.util.Scanner;
 
-public class Game {
+class Game {
 
     public static void main(String[] args) {
         winner();
