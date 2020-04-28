@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class Raise {
     public static void main(String[] args) {
+        int a, b, r = 1;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your number: ");
-        int a = scanner.nextInt();
+        a = scanner.nextInt();
         System.out.println("Enter your raise number: ");
-        int b = scanner.nextInt();
-        int r = 1;
+        b = scanner.nextInt();
+
         while (b>0){
             r = r * a;
             b--;
