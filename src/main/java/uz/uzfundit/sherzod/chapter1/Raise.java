@@ -9,9 +9,10 @@ public class Raise {
         int a = scanner.nextInt();
         System.out.println("Enter your raise number: ");
         int b = scanner.nextInt();
-        raise(a,b);
+
         long result = raise(a,b);
         System.out.println("Result: "+result);
+
     }
 
     public static long raise(int a, int b){
@@ -22,5 +23,4 @@ public class Raise {
         }
         return result;
     }
-
 }
