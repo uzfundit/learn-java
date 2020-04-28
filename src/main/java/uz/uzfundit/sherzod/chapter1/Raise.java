@@ -15,12 +15,17 @@ public class Raise {
 
     }
 
-    public static long raise(int a, int b){
-        long result = 1;
-        while (b>0){
-            result = result * a;
-            b--;
+    private static long raise(int a, int b) {
+        long t;
+        if (b == 0) {
+            return 1;
+        } else {
+            t = raise(a, b / 2);
+            if (b % 2 == 0) {
+                return t * t;
+            } else {
+                return t * t * a;
+            }
         }
-        return result;
     }
 }
