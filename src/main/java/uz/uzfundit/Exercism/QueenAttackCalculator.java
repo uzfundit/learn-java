@@ -1,4 +1,7 @@
 package uz.uzfundIT.Exercism;
+
+import java.util.Objects;
+
 public class QueenAttackCalculator {
     private final Queen whiteQueen;
     private final Queen blackQueen;
@@ -38,20 +41,20 @@ class Queen {
     private final int column;
 
     Queen(int row, int column) {
+        checkingPositionInRow(row);
+        checkingPositionInColumn(column);
         this.row = row;
         this.column = column;
-        positionRow(row);
-        positionColumn(column);
     }
 
-    private void positionRow(int row) {
+    private void checkingPositionInRow(int row) {
         if(row < 0)
             throw new IllegalArgumentException("Queen position must have positive row.");
         else if (row > 7)
             throw new IllegalArgumentException("Queen position must have row <= 7.");
     }
 
-    private void positionColumn(int column) {
+    private void checkingPositionInColumn(int column) {
         if(column < 0)
             throw new IllegalArgumentException("Queen position must have positive column.");
         else if (column > 7)
@@ -68,7 +71,15 @@ class Queen {
 
     @Override
     public boolean equals(Object queen) {
+        if (this == queen) return true;
+        if (!(queen instanceof Queen)) return false;
         Queen q = (Queen) queen;
         return this.row == q.getRow() && this.column == q.getColumn();
     }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(row,column);
+    }
+
 }
