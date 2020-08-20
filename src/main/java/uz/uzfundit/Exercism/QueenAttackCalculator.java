@@ -7,12 +7,12 @@ public class QueenAttackCalculator {
     private final Queen blackQueen;
 
     QueenAttackCalculator(Queen whiteQueen, Queen blackQueen) {
-        checkQueen(whiteQueen, blackQueen);
+        checkQueens(whiteQueen, blackQueen);
         this.whiteQueen = whiteQueen;
         this.blackQueen = blackQueen;
     }
 
-    private void checkQueen(Queen whiteQueen, Queen blackQueen){
+    private void checkQueens(Queen whiteQueen, Queen blackQueen){
         if (whiteQueen == null || blackQueen == null)
             throw new IllegalArgumentException("You must supply valid positions for both Queens.");
         else if (whiteQueen.equals(blackQueen))
