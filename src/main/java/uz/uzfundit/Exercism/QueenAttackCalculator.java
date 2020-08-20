@@ -7,14 +7,16 @@ public class QueenAttackCalculator {
     private final Queen blackQueen;
 
     QueenAttackCalculator(Queen whiteQueen, Queen blackQueen) {
-        if(whiteQueen == null || blackQueen == null) {
+        checkQueen(whiteQueen, blackQueen);
+        this.whiteQueen = whiteQueen;
+        this.blackQueen = blackQueen;
+    }
+
+    private void checkQueen(Queen whiteQueen, Queen blackQueen){
+        if (whiteQueen == null || blackQueen == null)
             throw new IllegalArgumentException("You must supply valid positions for both Queens.");
-        } else if(whiteQueen.equals(blackQueen)) {
+        else if (whiteQueen.equals(blackQueen))
             throw new IllegalArgumentException("Queens cannot occupy the same position.");
-        } else {
-            this.whiteQueen = whiteQueen;
-            this.blackQueen = blackQueen;
-        }
     }
 
     private boolean areQueensInSameRow(){
