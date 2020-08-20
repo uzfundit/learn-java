@@ -41,20 +41,20 @@ class Queen {
     private final int column;
 
     Queen(int row, int column) {
-        checkingPositionInRow(row);
-        checkingPositionInColumn(column);
+        checkPositionInRow(row);
+        checkPositionInColumn(column);
         this.row = row;
         this.column = column;
     }
 
-    private void checkingPositionInRow(int row) {
+    private void checkPositionInRow(int row) {
         if(row < 0)
             throw new IllegalArgumentException("Queen position must have positive row.");
         else if (row > 7)
             throw new IllegalArgumentException("Queen position must have row <= 7.");
     }
 
-    private void checkingPositionInColumn(int column) {
+    private void checkPositionInColumn(int column) {
         if(column < 0)
             throw new IllegalArgumentException("Queen position must have positive column.");
         else if (column > 7)

@@ -1,5 +1,7 @@
 package uz.uzfundit.Exercism;
 
+import java.util.Objects;
+
 public class QueenAttackWith2dArray {
     private final int[][] chess = new int[8][8];
 
@@ -69,25 +71,23 @@ class Queens {
     private final int column;
 
     public Queens(int i, int j) {
-        if (i >= 0) {
-            if (i < 8) {
-                this.row = i;
-            } else {
-                throw new IllegalArgumentException("Queen position must have row <= 7.");
-            }
-        } else {
+        checkPositionInRow(i);
+        checkPositionInColumn(j);
+        this.row = i;
+        this.column = j;
+    }
+    private void checkPositionInRow(int row) {
+        if(row < 0)
             throw new IllegalArgumentException("Queen position must have positive row.");
-        }
+        else if (row > 7)
+            throw new IllegalArgumentException("Queen position must have row <= 7.");
+    }
 
-        if (j >= 0) {
-            if (j < 8) {
-                this.column = j;
-            } else {
-                throw new IllegalArgumentException("Queen position must have column <= 7.");
-            }
-        } else {
+    private void checkPositionInColumn(int column) {
+        if(column < 0)
             throw new IllegalArgumentException("Queen position must have positive column.");
-        }
+        else if (column > 7)
+            throw new IllegalArgumentException("Queen position must have column <= 7.");
     }
 
     public int getRow() {
@@ -96,5 +96,18 @@ class Queens {
 
     public int getColumn() {
         return column;
+    }
+
+    @Override
+    public boolean equals(Object queen) {
+        if (this == queen) return true;
+        if (!(queen instanceof Queens)) return false;
+        Queens q = (Queens) queen;
+        return this.row == q.getRow() && this.column == q.getColumn();
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(row,column);
     }
 }
